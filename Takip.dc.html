@@ -24,6 +24,7 @@
     --muted2:#8a7c69; --muted3:#9c8e7a; --muted4:#aa9b86; --muted5:#a08f78;
     --muted5b:#a4977f; --muted6:#b3a48f; --faint:#cdbfa9; --faint2:#d8cdba;
     --field:#ffffff; --knob:#ffffff;
+    --primary:#c0613a;
     color-scheme: light;
   }
   :root[data-theme="dark"] {
@@ -52,7 +53,7 @@
   <!-- SIDEBAR -->
   <aside style="{{ sidebarStyle }}">
     <div style="display:flex; align-items:center; gap:11px; padding:6px 8px 22px;">
-      <div style="width:34px; height:34px; border-radius:10px; background:#c0613a; display:flex; align-items:center; justify-content:center; flex:none;">
+      <div style="width:34px; height:34px; border-radius:10px; background:var(--primary); display:flex; align-items:center; justify-content:center; flex:none;">
         <div style="width:13px; height:13px; border-radius:4px; background:var(--on-primary);"></div>
       </div>
       <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; color:var(--text); letter-spacing:-.02em;">Günce</div>
@@ -70,7 +71,7 @@
     <button onClick="{{ openSettings }}" style="margin-top:auto; margin-bottom:10px; display:flex; align-items:center; gap:11px; width:100%; text-align:left; border:none; cursor:pointer; padding:11px 13px; border-radius:12px; font-size:14.5px; font-weight:500; font-family:'Work Sans',sans-serif; background:transparent; color:var(--muted); transition:background .15s;" style-hover="background:var(--line);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><path d="M2 14h4"></path><path d="M10 8h4"></path><path d="M18 16h4"></path></svg><span>Modüller</span></button>
     <div style="padding:14px; border-radius:14px; background:var(--line); display:flex; flex-direction:column; gap:6px;">
       <div style="font-size:12px; color:var(--muted2); font-weight:500;">Günlük hedef</div>
-      <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#c0613a; line-height:1;">{{ overallPct }}%</div>
+      <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:var(--primary); line-height:1;">{{ overallPct }}%</div>
       <div style="font-size:12px; color:var(--muted3);">{{ streak }} günlük seri</div>
     </div>
   </aside>
@@ -85,7 +86,7 @@
       <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:16px; color:var(--text3); min-width:150px; text-align:center;">{{ dateNavLabel }}</div>
       <button onClick="{{ nextDay }}" style="width:36px; height:36px; border-radius:11px; border:1px solid var(--border); background:var(--card); color:var(--muted); font-size:18px; cursor:pointer; flex:none;">›</button>
       <sc-if value="{{ notToday }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ goToday }}" style="border:none; background:var(--accent-soft); color:#c0613a; padding:8px 14px; border-radius:11px; font-weight:600; cursor:pointer; font-size:13px;">Bugün'e dön</button>
+        <button onClick="{{ goToday }}" style="border:none; background:var(--accent-soft); color:var(--primary); padding:8px 14px; border-radius:11px; font-weight:600; cursor:pointer; font-size:13px;">Bugün'e dön</button>
       </sc-if>
     </div>
     </sc-if>
@@ -104,7 +105,7 @@
             <span style="font-weight:600; color:var(--text3); font-size:14px;">{{ streak }} gün seri</span>
           </div>
           <button onClick="{{ openProfile }}" style="background:var(--card); border:1px solid var(--border); padding:9px 14px; border-radius:12px; font-weight:600; color:var(--muted2); font-size:14px; cursor:pointer;">Profil & hedefler</button>
-          <button onClick="{{ openSettings }}" style="background:var(--card); border:1px solid var(--border); padding:9px 13px; border-radius:12px; font-weight:600; color:var(--muted2); font-size:14px; cursor:pointer; display:flex; align-items:center; gap:7px;"><span style="width:8px; height:8px; border-radius:2px; background:#c0613a; display:inline-block;"></span>Modüller</button>
+          <button onClick="{{ openSettings }}" style="background:var(--card); border:1px solid var(--border); padding:9px 13px; border-radius:12px; font-weight:600; color:var(--muted2); font-size:14px; cursor:pointer; display:flex; align-items:center; gap:7px;"><span style="width:8px; height:8px; border-radius:2px; background:var(--primary); display:inline-block;"></span>Modüller</button>
         </div>
       </div>
 
@@ -134,10 +135,10 @@
         <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px;">
           <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
             <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px; color:var(--text); margin:0;">Görevler</h2>
-            <button onClick="{{ openTask }}" style="border:none; background:var(--accent-soft); color:#c0613a; width:30px; height:30px; border-radius:9px; font-size:20px; cursor:pointer; line-height:1;">+</button>
+            <button onClick="{{ openTask }}" style="border:none; background:var(--accent-soft); color:var(--primary); width:30px; height:30px; border-radius:9px; font-size:20px; cursor:pointer; line-height:1;">+</button>
           </div>
           <div style="height:6px; border-radius:6px; background:var(--line); overflow:hidden; margin-bottom:14px;">
-            <div style="height:100%; background:#c0613a; border-radius:6px; width:{{ taskPct }}%; transition:width .4s ease;"></div>
+            <div style="height:100%; background:var(--primary); border-radius:6px; width:{{ taskPct }}%; transition:width .4s ease;"></div>
           </div>
           <div style="display:flex; flex-direction:column; gap:7px;">
             <sc-for list="{{ tasks }}" as="t" hint-placeholder-count="3">
@@ -161,7 +162,7 @@
         <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px;">
           <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
             <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px; color:var(--text); margin:0;">Plan</h2>
-            <button onClick="{{ openPlan }}" style="border:none; background:var(--accent-soft); color:#c0613a; width:30px; height:30px; border-radius:9px; font-size:20px; cursor:pointer; line-height:1;">+</button>
+            <button onClick="{{ openPlan }}" style="border:none; background:var(--accent-soft); color:var(--primary); width:30px; height:30px; border-radius:9px; font-size:20px; cursor:pointer; line-height:1;">+</button>
           </div>
           <div style="display:flex; flex-direction:column;">
             <sc-for list="{{ plan }}" as="p" hint-placeholder-count="4">
@@ -188,7 +189,7 @@
         <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px;">
           <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
             <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:17px; color:var(--text); margin:0;">Beslenme</h2>
-            <button onClick="{{ openMeal }}" style="border:none; background:var(--accent-soft); color:#c0613a; width:30px; height:30px; border-radius:9px; font-size:20px; cursor:pointer; line-height:1;">+</button>
+            <button onClick="{{ openMeal }}" style="border:none; background:var(--accent-soft); color:var(--primary); width:30px; height:30px; border-radius:9px; font-size:20px; cursor:pointer; line-height:1;">+</button>
           </div>
           <div style="display:flex; gap:8px; margin-bottom:14px;">
             <div style="flex:1; text-align:center; background:var(--card2); border-radius:12px; padding:10px 4px;"><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; color:#7c8350;">{{ macP }}</div><div style="font-size:11px; color:var(--muted4);">Protein g</div></div>
@@ -203,7 +204,7 @@
                   <div style="font-weight:500; color:var(--text2); font-size:14px;">{{ m.name }}</div>
                   <div style="font-size:12px; color:var(--muted4);">{{ m.grams }} g · {{ m.protein }}p {{ m.carbs }}k {{ m.fat }}y</div>
                 </div>
-                <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; color:#c0613a; font-size:14px;">{{ m.calories }}</div>
+                <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:600; color:var(--primary); font-size:14px;">{{ m.calories }}</div>
                 <button onClick="{{ m.del }}" style="border:none; background:none; color:var(--faint); cursor:pointer; font-size:17px; padding:2px 4px;">×</button>
               </div>
             </sc-for>
@@ -239,8 +240,8 @@
             <div style="{{ deltaStyle }}">{{ weightDelta }}</div>
           </div>
           <svg viewBox="0 0 300 80" preserveAspectRatio="none" style="width:100%; height:72px;">
-            <polyline points="{{ chartPath }}" fill="none" stroke="#c0613a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
-            <sc-for list="{{ chartDots }}" as="d" hint-placeholder-count="0"><circle cx="{{ d.x }}" cy="{{ d.y }}" r="2.5" fill="#c0613a"></circle></sc-for>
+            <polyline points="{{ chartPath }}" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>
+            <sc-for list="{{ chartDots }}" as="d" hint-placeholder-count="0"><circle cx="{{ d.x }}" cy="{{ d.y }}" r="2.5" style="fill:var(--primary)"></circle></sc-for>
           </svg>
         </div>
         </sc-if>
@@ -279,7 +280,7 @@
     <div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
         <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; color:var(--text); margin:0; letter-spacing:-.02em;">Günlük plan</h1>
-        <button onClick="{{ openPlan }}" style="background:#c0613a; color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Blok ekle</button>
+        <button onClick="{{ openPlan }}" style="background:var(--primary); color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Blok ekle</button>
       </div>
       <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; max-width:640px;">
         <div style="display:flex; flex-direction:column;">
@@ -312,12 +313,12 @@
         <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; color:var(--text); margin:0; letter-spacing:-.02em;">Görevler</h1>
         <div style="display:flex; gap:10px; align-items:center;">
           <button onClick="{{ toggleHide }}" style="{{ hideBtnStyle }}">{{ hideLabel }}</button>
-          <button onClick="{{ openTask }}" style="background:#c0613a; color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Görev ekle</button>
+          <button onClick="{{ openTask }}" style="background:var(--primary); color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Görev ekle</button>
         </div>
       </div>
       <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; max-width:640px;">
         <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-          <div style="flex:1; height:7px; border-radius:7px; background:var(--line); overflow:hidden;"><div style="height:100%; background:#c0613a; border-radius:7px; width:{{ taskPct }}%; transition:width .4s ease;"></div></div>
+          <div style="flex:1; height:7px; border-radius:7px; background:var(--line); overflow:hidden;"><div style="height:100%; background:var(--primary); border-radius:7px; width:{{ taskPct }}%; transition:width .4s ease;"></div></div>
           <span style="font-size:13px; font-weight:600; color:var(--muted2);">{{ taskDoneLabel }}</span>
         </div>
         <div style="display:flex; flex-direction:column; gap:8px;">
@@ -357,7 +358,7 @@
     <div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
         <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; color:var(--text); margin:0; letter-spacing:-.02em;">Spor & antrenman</h1>
-        <button onClick="{{ openWorkout }}" style="background:#c0613a; color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Antrenman</button>
+        <button onClick="{{ openWorkout }}" style="background:var(--primary); color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Antrenman</button>
       </div>
       <div style="display:flex; gap:12px; margin-bottom:18px; flex-wrap:wrap;">
         <div style="flex:1; min-width:140px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px;"><div style="font-size:13px; color:var(--muted3); margin-bottom:5px;">Bu gün toplam</div><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:var(--text);">{{ workoutMin }} <span style="font-size:14px; color:var(--muted4); font-weight:500;">dk</span></div></div>
@@ -396,7 +397,7 @@
     <div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
         <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; color:var(--text); margin:0; letter-spacing:-.02em;">Beslenme</h1>
-        <button onClick="{{ openMeal }}" style="background:#c0613a; color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Öğün ekle</button>
+        <button onClick="{{ openMeal }}" style="background:var(--primary); color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Öğün ekle</button>
       </div>
       <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; margin-bottom:18px;">
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
@@ -420,7 +421,7 @@
               <div style="font-weight:500; color:var(--text2); font-size:15px;">{{ m.name }}</div>
               <div style="font-size:12.5px; color:var(--muted4); margin-top:2px;">{{ m.grams }} g · P{{ m.protein }} K{{ m.carbs }} Y{{ m.fat }}</div>
             </div>
-            <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:#c0613a; font-size:16px;">{{ m.calories }}</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--primary); font-size:16px;">{{ m.calories }}</div>
             <button onClick="{{ m.del }}" style="border:none; background:none; color:var(--faint); cursor:pointer; font-size:18px; padding:2px 6px;">×</button>
           </div>
         </sc-for>
@@ -436,7 +437,7 @@
     <div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
         <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; color:var(--text); margin:0; letter-spacing:-.02em;">Kilo & ölçü</h1>
-        <button onClick="{{ openWeight }}" style="background:#c0613a; color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Ölçüm ekle</button>
+        <button onClick="{{ openWeight }}" style="background:var(--primary); color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Ölçüm ekle</button>
       </div>
       <div style="background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; margin-bottom:18px;">
         <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
@@ -444,8 +445,8 @@
           <div style="{{ deltaStyle }}">{{ weightDelta }} son ölçüme göre</div>
         </div>
         <svg viewBox="0 0 600 160" preserveAspectRatio="none" style="width:100%; height:180px;">
-          <polyline points="{{ chartPathBig }}" fill="none" stroke="#c0613a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>
-          <sc-for list="{{ chartDotsBig }}" as="d" hint-placeholder-count="0"><circle cx="{{ d.x }}" cy="{{ d.y }}" r="3" fill="#c0613a"></circle></sc-for>
+          <polyline points="{{ chartPathBig }}" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>
+          <sc-for list="{{ chartDotsBig }}" as="d" hint-placeholder-count="0"><circle cx="{{ d.x }}" cy="{{ d.y }}" r="3" style="fill:var(--primary)"></circle></sc-for>
         </svg>
       </div>
       <div style="display:flex; flex-direction:column; gap:8px; max-width:520px;">
@@ -456,6 +457,36 @@
             <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; color:var(--text); font-size:17px;">{{ r.weight }} kg</div>
           </div>
         </sc-for>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- ===== ALMAK İSTEDİKLERİM ===== -->
+    <sc-if value="{{ isWishlist }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; gap:12px; flex-wrap:wrap;">
+        <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; color:var(--text); margin:0; letter-spacing:-.02em;">Almak istediklerim</h1>
+        <button onClick="{{ openWish }}" style="background:var(--primary); color:#fff; border:none; padding:11px 18px; border-radius:12px; font-weight:600; cursor:pointer; font-size:14px;">+ Ürün ekle</button>
+      </div>
+      <div style="display:flex; gap:12px; margin-bottom:18px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:160px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px;"><div style="font-size:13px; color:var(--muted3); margin-bottom:5px;">Bekleyen tahmini tutar</div><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:var(--primary);">{{ wishTotalLabel }}</div></div>
+        <div style="flex:1; min-width:160px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px;"><div style="font-size:13px; color:var(--muted3); margin-bottom:5px;">Bekleyen ürün</div><div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:var(--text);">{{ wishCount }}</div></div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; max-width:640px;">
+        <sc-for list="{{ wishlist }}" as="w" hint-placeholder-count="3">
+          <div style="display:flex; align-items:center; gap:13px; padding:14px 16px; border-radius:14px; background:var(--card); border:1px solid var(--line);">
+            <button onClick="{{ w.toggle }}" style="{{ w.checkStyle }}">{{ w.check }}</button>
+            <div onClick="{{ w.edit }}" style="flex:1; min-width:0; cursor:pointer;">
+              <div style="{{ w.nameStyle }}">{{ w.name }}</div>
+              <div style="font-size:12.5px; color:var(--muted4); margin-top:2px;">{{ w.note }}</div>
+            </div>
+            <div style="{{ w.priceStyle }}">{{ w.priceLabel }}</div>
+            <button onClick="{{ w.del }}" style="border:none; background:none; color:var(--faint); cursor:pointer; font-size:18px; padding:2px 6px;">×</button>
+          </div>
+        </sc-for>
+        <sc-if value="{{ noWish }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center; padding:30px; color:var(--muted6); font-size:15px;">Almak istediğin ürünleri fiyatıyla ekle</div>
+        </sc-if>
       </div>
     </div>
     </sc-if>
@@ -495,7 +526,10 @@
             <div style="flex:1;"><label style="{{ lblStyle }}">Saat</label><input type="time" value="{{ form.taskTime }}" onInput="{{ b.taskTime }}" style="{{ inpStyle }}"></div>
             <div style="flex:1;"><label style="{{ lblStyle }}">Kategori</label><select value="{{ form.taskCat }}" onChange="{{ b.taskCat }}" style="{{ inpStyle }}"><option value="work">İş</option><option value="health">Sağlık</option><option value="personal">Kişisel</option></select></div>
           </div>
-          <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:14px; color:var(--text3);"><input type="checkbox" checked="{{ form.taskRepeat }}" onChange="{{ b.taskRepeat }}" style="width:18px; height:18px; accent-color:#c0613a;"> Her gün tekrarla</label>
+          <sc-if value="{{ isNewTask }}" hint-placeholder-val="{{ true }}">
+            <div><label style="{{ lblStyle }}">Tür</label><select value="{{ form.taskType }}" onChange="{{ b.taskType }}" style="{{ inpStyle }}"><option value="once">Tek seferlik (bu gün)</option><option value="repeat">Her gün tekrarla</option><option value="carry">Bitene kadar taşı</option></select></div>
+            <div style="font-size:12px; color:var(--muted4); margin-top:-6px;">Bitene kadar taşı: işaretlemediğin sürece her gün otomatik görünür, tikleyince biter.</div>
+          </sc-if>
         </div>
       </sc-if>
 
@@ -541,7 +575,7 @@
           </div>
           <div><label style="{{ lblStyle }}">Tür</label><select value="{{ form.woType }}" onChange="{{ b.woType }}" style="{{ inpStyle }}"><option value="Güç">Güç</option><option value="Kardiyo">Kardiyo</option><option value="HIIT">HIIT</option><option value="Esneklik">Esneklik</option><option value="Yürüyüş">Yürüyüş</option></select></div>
           <div>
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;"><label style="{{ lblStyle }} margin:0;">Hareketler</label><button onClick="{{ addExercise }}" style="border:none; background:var(--accent-soft); color:#c0613a; padding:5px 12px; border-radius:9px; font-weight:600; cursor:pointer; font-size:13px;">+ Hareket</button></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;"><label style="{{ lblStyle }} margin:0;">Hareketler</label><button onClick="{{ addExercise }}" style="border:none; background:var(--accent-soft); color:var(--primary); padding:5px 12px; border-radius:9px; font-weight:600; cursor:pointer; font-size:13px;">+ Hareket</button></div>
             <div style="display:flex; flex-direction:column; gap:8px;">
               <sc-for list="{{ exRows }}" as="ex" hint-placeholder-count="1">
                 <div style="display:flex; gap:7px; align-items:center;">
@@ -570,6 +604,17 @@
         </div>
       </sc-if>
 
+      <sc-if value="{{ isWishModal }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div><label style="{{ lblStyle }}">Ürün</label><input value="{{ form.wishName }}" onInput="{{ b.wishName }}" placeholder="Ne almak istiyorsun?" style="{{ inpStyle }}"></div>
+          <div style="display:flex; gap:12px;">
+            <div style="flex:1;"><label style="{{ lblStyle }}">Fiyat (₺)</label><input type="number" value="{{ form.wishPrice }}" onInput="{{ b.wishPrice }}" placeholder="0" style="{{ inpStyle }}"></div>
+            <div style="flex:1;"><label style="{{ lblStyle }}">Bağlantı (opsiyonel)</label><input value="{{ form.wishUrl }}" onInput="{{ b.wishUrl }}" placeholder="https://…" style="{{ inpStyle }}"></div>
+          </div>
+          <div><label style="{{ lblStyle }}">Not (opsiyonel)</label><input value="{{ form.wishNote }}" onInput="{{ b.wishNote }}" placeholder="ör. renk, model, beden" style="{{ inpStyle }}"></div>
+        </div>
+      </sc-if>
+
       <sc-if value="{{ isProfileModal }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex; flex-direction:column; gap:16px;">
           <div>
@@ -584,7 +629,7 @@
               <div style="flex:1;"><label style="{{ lblStyle }}">Hedef</label><select value="{{ form.pGoal }}" onChange="{{ b.pGoal }}" style="{{ inpStyle }}"><option value="lose">Kilo ver</option><option value="maintain">Koru</option><option value="gain">Kilo al</option></select></div>
             </div>
             <div><label style="{{ lblStyle }}">Aktivite</label><select value="{{ form.pActivity }}" onChange="{{ b.pActivity }}" style="{{ inpStyle }}"><option value="1.2">Hareketsiz</option><option value="1.375">Hafif aktif</option><option value="1.55">Orta aktif</option><option value="1.725">Çok aktif</option></select></div>
-            <button onClick="{{ calcGoals }}" style="width:100%; margin-top:12px; border:1px solid var(--accent-soft-border); background:var(--accent-soft); color:#c0613a; padding:11px; border-radius:11px; font-weight:600; cursor:pointer; font-size:14px;">Hedefleri otomatik hesapla</button>
+            <button onClick="{{ calcGoals }}" style="width:100%; margin-top:12px; border:1px solid var(--accent-soft-border); background:var(--accent-soft); color:var(--primary); padding:11px; border-radius:11px; font-weight:600; cursor:pointer; font-size:14px;">Hedefleri otomatik hesapla</button>
           </div>
           <div style="height:1px; background:var(--border);"></div>
           <div>
@@ -630,6 +675,13 @@
           </div>
           <button onClick="{{ toggleTheme }}" style="{{ themeSwitchStyle }}"><span style="{{ themeKnobStyle }}"></span></button>
         </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:4px 2px 16px; border-bottom:1px solid var(--divider); margin-bottom:14px;">
+          <div>
+            <div style="font-weight:500; color:var(--text); font-size:15px;">Vurgu rengi</div>
+            <div style="font-size:12.5px; color:var(--muted4); margin-top:1px;">Butonlar, halkalar ve vurgular</div>
+          </div>
+          <input type="color" value="{{ accentValue }}" onInput="{{ setAccent }}" style="width:48px; height:34px; border:1px solid var(--field-border); border-radius:10px; background:var(--field); cursor:pointer; padding:2px;">
+        </div>
         <div style="font-size:13px; color:var(--muted3); margin-bottom:4px;">Kullanmadığın modülleri kapat — menüden ve panodan gizlenir, verilerin silinmez.</div>
         <div style="display:flex; flex-direction:column;">
           <sc-for list="{{ features }}" as="f" hint-placeholder-count="7">
@@ -642,13 +694,13 @@
             </div>
           </sc-for>
         </div>
-        <button onClick="{{ closeModal }}" style="width:100%; margin-top:22px; border:none; background:#c0613a; color:#fff; padding:13px; border-radius:12px; font-weight:600; cursor:pointer; font-size:15px;">Tamam</button>
+        <button onClick="{{ closeModal }}" style="width:100%; margin-top:22px; border:none; background:var(--primary); color:#fff; padding:13px; border-radius:12px; font-weight:600; cursor:pointer; font-size:15px;">Tamam</button>
       </sc-if>
 
       <sc-if value="{{ showFormFooter }}" hint-placeholder-val="{{ true }}">
       <div style="display:flex; gap:10px; margin-top:22px;">
         <button onClick="{{ closeModal }}" style="flex:1; border:1px solid var(--field-border); background:var(--field); color:var(--muted2); padding:13px; border-radius:12px; font-weight:600; cursor:pointer; font-size:15px;">İptal</button>
-        <button onClick="{{ submit }}" style="flex:2; border:none; background:#c0613a; color:#fff; padding:13px; border-radius:12px; font-weight:600; cursor:pointer; font-size:15px;">{{ saveLabel }}</button>
+        <button onClick="{{ submit }}" style="flex:2; border:none; background:var(--primary); color:#fff; padding:13px; border-radius:12px; font-weight:600; cursor:pointer; font-size:15px;">{{ saveLabel }}</button>
       </div>
       </sc-if>
     </div>
@@ -662,10 +714,11 @@ const KEY = 'gunce_data_v2';
 const SYNC_KEY = 'gunce_sync_cfg';
 const THEME_KEY = 'gunce_theme';
 const JSONBIN_BASE = 'https://api.jsonbin.io/v3/b';
+const DEFAULT_ACCENT = '#c0'+'613a';
 const MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
 const DAYS = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
 const SHORT = ['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'];
-const CAT = { work:{label:'İş', color:'#c0613a'}, health:{label:'Sağlık', color:'#7c8350'}, personal:{label:'Kişisel', color:'#5d8079'} };
+const CAT = { work:{label:'İş', color:'var(--primary)'}, health:{label:'Sağlık', color:'#7c8350'}, personal:{label:'Kişisel', color:'#5d8079'} };
 const ICONS = {
   dashboard:['M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8','M12 2v2 M12 20v2 M2 12h2 M20 12h2 M4.9 4.9l1.3 1.3 M17.8 17.8l1.3 1.3 M19.1 4.9l-1.3 1.3 M6.2 17.8l-1.3 1.3'],
   trend:['M3 3v18h18','M18 17V9','M13 17V5','M8 17v-3'],
@@ -673,7 +726,8 @@ const ICONS = {
   tasks:['M3 5l2 2 3-3','M3 12l2 2 3-3','M3 19l2 2 3-3','M13 6h8','M13 12h8','M13 19h8'],
   sport:['M22 12h-2.5a2 2 0 0 0-1.9 1.5l-2.4 8.3a.25.25 0 0 1-.5 0L9.2 2.2a.25.25 0 0 0-.5 0l-2.3 8.3A2 2 0 0 1 4.5 12H2'],
   food:['M4 3v6a2 2 0 0 0 2 2 2 2 0 0 0 2-2V3','M6 11v11','M16 3c-1.5 1.5-2 4-2 7v2h4V3z','M18 12v10'],
-  weight:['M12 14l3.5-3.5','M3.4 19a10 10 0 1 1 17.2 0']
+  weight:['M12 14l3.5-3.5','M3.4 19a10 10 0 1 1 17.2 0'],
+  wishlist:['M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z','M3 6h18','M16 10a4 4 0 0 1-8 0']
 };
 
 function ymd(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
@@ -686,9 +740,12 @@ function seed(){
     goals:{ calories:3100, protein:216, water:4200, workoutMin:45 },
     profile:{ height:'186', weight:'120', age:'22', sex:'erkek', activity:'1.55', goal:'lose' },
     routines:[],
-    features:{plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true},
+    features:{plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true,wishlist:true},
     byDate:{},
-    weights:[]
+    weights:[],
+    wishlist:[],
+    carryTasks:[],
+    accent:DEFAULT_ACCENT
   };
 }
 
@@ -699,16 +756,23 @@ class Component extends DCLogic {
     if(!data || !data.byDate){ data = seed(); }
     if(!data.routines) data.routines = [];
     if(!data.profile) data.profile = {};
-    if(!data.features) data.features = {plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true};
+    if(!data.features) data.features = {plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true,wishlist:true};
+    if(data.features.wishlist===undefined) data.features.wishlist = true;
+    if(!data.wishlist) data.wishlist = [];
+    if(!data.carryTasks) data.carryTasks = [];
+    if(!data.accent) data.accent = DEFAULT_ACCENT;
     let sync=null; try { sync = JSON.parse(localStorage.getItem(SYNC_KEY)); } catch(e){}
     let theme='light'; try { theme = localStorage.getItem(THEME_KEY) || 'light'; } catch(e){}
-    this.state = { view:'dashboard', isMobile:(typeof window!=='undefined' && window.innerWidth<880), data, modal:null, form:{}, editId:null, sel:ymd(new Date()), hideDone:false, toast:null, sync:sync||null, syncStatus:(sync&&sync.binId)?'idle':'off', theme };
+    this.state = { view:'dashboard', isMobile:(typeof window!=='undefined' && window.innerWidth<880), data, modal:null, form:{}, editId:null, editCarry:false, sel:ymd(new Date()), hideDone:false, toast:null, sync:sync||null, syncStatus:(sync&&sync.binId)?'idle':'off', theme };
     this.applyTheme(theme);
+    this.applyAccent(data.accent);
     this.applyRoutines(this.state.data, this.state.sel);
     try { localStorage.setItem(KEY, JSON.stringify(this.state.data)); } catch(e){}
   }
   applyTheme(theme){ try{ if(typeof document!=='undefined'){ if(theme==='dark') document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme'); } }catch(e){} }
   toggleTheme(){ const theme = this.state.theme==='dark'?'light':'dark'; try{ localStorage.setItem(THEME_KEY, theme); }catch(e){} this.applyTheme(theme); this.setState({theme}); this.toast(theme==='dark'?'Karanlık mod açık':'Aydınlık mod'); }
+  applyAccent(color){ try{ if(typeof document!=='undefined' && color) document.documentElement.style.setProperty('--primary', color); }catch(e){} }
+  setAccent(color){ const data=structuredClone(this.state.data); data.accent=color; this.applyAccent(color); this.persist(data); }
   componentDidMount(){
     this._onResize = () => { const m = window.innerWidth<880; if(m!==this.state.isMobile) this.setState({isMobile:m}); };
     window.addEventListener('resize', this._onResize);
@@ -745,8 +809,12 @@ class Component extends DCLogic {
           if((remote.updatedAt||0) >= (local.updatedAt||0)){
             if(!remote.routines) remote.routines=[];
             if(!remote.profile) remote.profile={};
-            if(!remote.features) remote.features={plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true};
+            if(!remote.features) remote.features={plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true,wishlist:true};
+            if(!remote.wishlist) remote.wishlist=[];
+            if(!remote.carryTasks) remote.carryTasks=[];
+            if(!remote.accent) remote.accent=DEFAULT_ACCENT;
             this.applyRoutines(remote, this.state.sel);
+            this.applyAccent(remote.accent);
             this.persistLocal(remote);
             this.setState({data:remote, syncStatus:'synced'});
           } else {
@@ -789,18 +857,20 @@ class Component extends DCLogic {
   changeDate(delta){ const d = new Date(this.state.sel+'T00:00:00'); d.setDate(d.getDate()+delta); const sel = ymd(d); const data = structuredClone(this.state.data); this.applyRoutines(data, sel); this.persist(data); this.setState({sel}); }
   goToday(){ const sel = this.today(); const data = structuredClone(this.state.data); this.applyRoutines(data, sel); this.persist(data); this.setState({sel}); }
   updateField(f,v){ this.setState(s=>({form:{...s.form,[f]:v}})); }
-  closeModal(){ this.setState({modal:null, form:{}, editId:null}); }
+  closeModal(){ this.setState({modal:null, form:{}, editId:null, editCarry:false}); }
   toast(msg){ this.setState({toast:msg}); clearTimeout(this._tt); this._tt=setTimeout(()=>this.setState({toast:null}),1900); }
 
   openModal(type, item){
     let form = {}, editId = item? (item.id||item._wid) : null;
-    if(type==='task') form = item? {taskText:item.text, taskTime:item.time, taskCat:item.cat, taskRepeat:false} : {taskCat:'personal', taskTime:'12:00', taskRepeat:false};
+    const editCarry = !!(item && item._carry);
+    if(type==='task') form = item? {taskText:item.text, taskTime:item.time, taskCat:item.cat, taskType:item._carry?'carry':'once'} : {taskCat:'personal', taskTime:'12:00', taskType:'once'};
+    if(type==='wish') form = item? {wishName:item.name, wishPrice:item.price, wishNote:item.note||'', wishUrl:item.url||''} : {};
     if(type==='plan') form = item? {planTitle:item.title, planStart:item.start, planCat:item.cat} : {planCat:'work', planStart:'09:00'};
     if(type==='meal') form = item? {mealName:item.name, mealMeal:item.meal, mealGrams:item.grams, mealCalories:item.calories, mealProtein:item.protein, mealCarbs:item.carbs, mealFat:item.fat} : {mealMeal:'Kahvaltı'};
     if(type==='workout') form = item? {woName:item.name, woType:item.type, woDuration:item.duration, exercises:(item.exercises||[]).map(e=>({...e}))} : {woType:'Güç', exercises:[{name:'',sets:'',reps:'',weight:''}]};
     if(type==='weight') form = item? {wWeight:item.weight, wDate:item.date, wWaist:item.waist||'', wFat:item.fat||''} : {wDate:this.state.sel};
     if(type==='profile'){ const g=this.state.data.goals, p=this.state.data.profile||{}; const sorted=[...(this.state.data.weights||[])].sort((a,b)=>a.date.localeCompare(b.date)); const lw=sorted[sorted.length-1]; const sy=this.state.sync||{}; form = {gCal:g.calories, gProtein:g.protein, gWater:g.water, gWorkout:g.workoutMin, pHeight:p.height||'', pWeight:p.weight||(lw?lw.weight:''), pAge:p.age||'', pSex:p.sex||'erkek', pActivity:p.activity||'1.375', pGoal:p.goal||'maintain', syncBin:sy.binId||'', syncKey:sy.key||''}; }
-    this.setState({modal:type, form, editId});
+    this.setState({modal:type, form, editId, editCarry});
   }
   addExercise(){ this.setState(s=>({form:{...s.form, exercises:[...(s.form.exercises||[]), {name:'',sets:'',reps:'',weight:''}]}})); }
   updateExercise(i,field,val){ this.setState(s=>{ const ex=[...(s.form.exercises||[])]; ex[i]={...ex[i],[field]:val}; return {form:{...s.form,exercises:ex}}; }); }
@@ -819,12 +889,24 @@ class Component extends DCLogic {
     this.toast('Hedefler hesaplandı');
   }
   exportData(){ try{ const blob=new Blob([JSON.stringify(this.state.data,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='gunce-yedek-'+this.today()+'.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); this.toast('Yedek indirildi'); }catch(e){ this.toast('İndirilemedi'); } }
-  importData(e){ const file=e.target.files&&e.target.files[0]; if(!file) return; const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d&&d.byDate){ if(!d.routines)d.routines=[]; if(!d.profile)d.profile={}; this.persist(d); this.toast('Yedek yüklendi'); this.closeModal(); } else this.toast('Geçersiz dosya'); }catch(err){ this.toast('Dosya okunamadı'); } }; r.readAsText(file); }
+  importData(e){ const file=e.target.files&&e.target.files[0]; if(!file) return; const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d&&d.byDate){ if(!d.routines)d.routines=[]; if(!d.profile)d.profile={}; if(!d.wishlist)d.wishlist=[]; if(!d.carryTasks)d.carryTasks=[]; if(!d.accent)d.accent=DEFAULT_ACCENT; this.applyAccent(d.accent); this.persist(d); this.toast('Yedek yüklendi'); this.closeModal(); } else this.toast('Geçersiz dosya'); }catch(err){ this.toast('Dosya okunamadı'); } }; r.readAsText(file); }
 
   submit(){
     const t = this.state.modal, f = this.state.form, ed = this.state.editId;
     const n = v => { const x = parseFloat(v); return isNaN(x)?0:x; };
-    if(t==='task'){ if(!f.taskText) return; if(ed){ this.mutateDay(d=>{ const x=d.tasks.find(i=>i.id===ed); if(x){x.text=f.taskText;x.time=f.taskTime||'';x.cat=f.taskCat||'personal';} }); } else { this.mutateDay((d,data)=>{ let routineId=null; if(f.taskRepeat){ routineId=uid(); data.routines.push({id:routineId, text:f.taskText, time:f.taskTime||'', cat:f.taskCat||'personal'}); if(!d.routinesApplied) d.routinesApplied=[]; d.routinesApplied.push(routineId); } d.tasks.push({id:uid(), text:f.taskText, done:false, time:f.taskTime||'', cat:f.taskCat||'personal', routineId:routineId}); }); } this.toast(ed?'Güncellendi':'Görev eklendi'); }
+    if(t==='task'){ if(!f.taskText) return; const tt=f.taskType||'once';
+      if(ed){
+        if(this.state.editCarry){ const data=structuredClone(this.state.data); const x=(data.carryTasks||[]).find(i=>i.id===ed); if(x){x.text=f.taskText;x.time=f.taskTime||'';x.cat=f.taskCat||'personal';} this.persist(data); }
+        else { this.mutateDay(d=>{ const x=d.tasks.find(i=>i.id===ed); if(x){x.text=f.taskText;x.time=f.taskTime||'';x.cat=f.taskCat||'personal';} }); }
+      } else if(tt==='carry'){
+        const data=structuredClone(this.state.data); if(!data.carryTasks) data.carryTasks=[]; data.carryTasks.push({id:uid(), text:f.taskText, time:f.taskTime||'', cat:f.taskCat||'personal', done:false, doneDate:null, createdDate:this.state.sel}); this.persist(data);
+      } else if(tt==='repeat'){
+        this.mutateDay((d,data)=>{ const routineId=uid(); data.routines.push({id:routineId, text:f.taskText, time:f.taskTime||'', cat:f.taskCat||'personal'}); if(!d.routinesApplied) d.routinesApplied=[]; d.routinesApplied.push(routineId); d.tasks.push({id:uid(), text:f.taskText, done:false, time:f.taskTime||'', cat:f.taskCat||'personal', routineId:routineId}); });
+      } else {
+        this.mutateDay(d=>{ d.tasks.push({id:uid(), text:f.taskText, done:false, time:f.taskTime||'', cat:f.taskCat||'personal'}); });
+      }
+      this.toast(ed?'Güncellendi':'Görev eklendi'); }
+    if(t==='wish'){ if(!f.wishName) return; const data=structuredClone(this.state.data); if(!data.wishlist) data.wishlist=[]; if(ed){ const x=data.wishlist.find(i=>i.id===ed); if(x){x.name=f.wishName; x.price=n(f.wishPrice); x.note=f.wishNote||''; x.url=f.wishUrl||'';} } else data.wishlist.push({id:uid(), name:f.wishName, price:n(f.wishPrice), note:f.wishNote||'', url:f.wishUrl||'', bought:false, createdAt:this.today()}); this.persist(data); this.toast(ed?'Güncellendi':'Eklendi'); }
     if(t==='plan'){ if(!f.planTitle) return; this.mutateDay(d=>{ if(ed){ const x=d.plan.find(i=>i.id===ed); if(x){x.title=f.planTitle;x.start=f.planStart||'';x.cat=f.planCat||'work';} } else d.plan.push({id:uid(), start:f.planStart||'', title:f.planTitle, cat:f.planCat||'work'}); d.plan.sort((a,b)=>a.start.localeCompare(b.start)); }); this.toast(ed?'Güncellendi':'Plan eklendi'); }
     if(t==='meal'){ if(!f.mealName) return; this.mutateDay(d=>{ if(ed){ const x=d.meals.find(i=>i.id===ed); if(x){Object.assign(x,{meal:f.mealMeal||'Ara',name:f.mealName,grams:n(f.mealGrams),calories:n(f.mealCalories),protein:n(f.mealProtein),carbs:n(f.mealCarbs),fat:n(f.mealFat)});} } else d.meals.push({id:uid(), meal:f.mealMeal||'Ara', name:f.mealName, grams:n(f.mealGrams), calories:n(f.mealCalories), protein:n(f.mealProtein), carbs:n(f.mealCarbs), fat:n(f.mealFat)}); }); this.toast(ed?'Güncellendi':'Öğün eklendi'); }
     if(t==='workout'){ if(!f.woName) return; const ex=(f.exercises||[]).filter(e=>e.name).map(e=>({name:e.name,sets:n(e.sets),reps:n(e.reps),weight:n(e.weight)})); this.mutateDay(d=>{ if(ed){ const x=d.workouts.find(i=>i.id===ed); if(x){Object.assign(x,{name:f.woName,type:f.woType||'Güç',duration:n(f.woDuration),exercises:ex});} } else d.workouts.push({id:uid(), name:f.woName, type:f.woType||'Güç', duration:n(f.woDuration), exercises:ex}); }); this.toast(ed?'Güncellendi':'Antrenman eklendi'); }
@@ -834,6 +916,10 @@ class Component extends DCLogic {
   }
   toggleTask(id){ const wasNotDone = !(this.day().tasks.find(t=>t.id===id)||{}).done; this.mutateDay(d=>{ const t=d.tasks.find(x=>x.id===id); if(t) t.done=!t.done; }); if(wasNotDone) this.toast('Tamamlandı'); }
   delTask(id){ this.mutateDay(d=>{ d.tasks = d.tasks.filter(x=>x.id!==id); }); }
+  toggleCarry(id){ const data=structuredClone(this.state.data); const x=(data.carryTasks||[]).find(c=>c.id===id); let nowDone=false; if(x){ x.done=!x.done; x.doneDate=x.done?this.state.sel:null; nowDone=x.done; } this.persist(data); if(nowDone) this.toast('Tamamlandı'); }
+  delCarry(id){ const data=structuredClone(this.state.data); data.carryTasks=(data.carryTasks||[]).filter(c=>c.id!==id); this.persist(data); }
+  delWish(id){ const data=structuredClone(this.state.data); data.wishlist=(data.wishlist||[]).filter(w=>w.id!==id); this.persist(data); }
+  toggleWish(id){ const data=structuredClone(this.state.data); const x=(data.wishlist||[]).find(w=>w.id===id); if(x) x.bought=!x.bought; this.persist(data); }
   delPlan(id){ this.mutateDay(d=>{ d.plan = d.plan.filter(x=>x.id!==id); }); }
   delMeal(id){ this.mutateDay(d=>{ d.meals = d.meals.filter(x=>x.id!==id); }); }
   delWorkout(id){ this.mutateDay(d=>{ d.workouts = d.workouts.filter(x=>x.id!==id); }); }
@@ -854,11 +940,12 @@ class Component extends DCLogic {
 
   renderVals(){
     const S=this.state, data=S.data, g=data.goals, day=this.day(), mobile=S.isMobile, view=S.view, sel=S.sel, td=this.today();
-    const F=data.features||{plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true};
-    const navDefs=[['dashboard','Bugün'],['trend','Trend'],['plan','Plan'],['tasks','Görev'],['sport','Spor'],['food','Yemek'],['weight','Kilo']].filter(([k])=>k==='dashboard'||F[k]);
+    const F=data.features||{plan:true,tasks:true,food:true,water:true,sport:true,weight:true,trend:true,wishlist:true};
+    const accent = data.accent || DEFAULT_ACCENT;
+    const navDefs=[['dashboard','Bugün'],['trend','Trend'],['plan','Plan'],['tasks','Görev'],['sport','Spor'],['food','Yemek'],['weight','Kilo'],['wishlist','Liste']].filter(([k])=>k==='dashboard'||F[k]);
     const navItems = navDefs.map(([k,label])=>{ const active=view===k; return { key:k, label, icon:ICONS[k]||[], onClick:()=>this.setView(k),
-      style:`display:flex; align-items:center; gap:11px; width:100%; text-align:left; border:none; cursor:pointer; padding:11px 13px; border-radius:12px; font-size:14.5px; font-weight:${active?600:500}; font-family:'Work Sans',sans-serif; background:${active?'var(--accent-soft)':'transparent'}; color:${active?'#c0613a':'var(--muted)'}; transition:background .15s, color .15s;`,
-      mobileStyle:`flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; border:none; background:none; cursor:pointer; padding:7px 1px; color:${active?'#c0613a':'var(--muted5b)'}; font-weight:${active?600:500}; font-family:'Work Sans',sans-serif; transition:color .15s;` }; });
+      style:`display:flex; align-items:center; gap:11px; width:100%; text-align:left; border:none; cursor:pointer; padding:11px 13px; border-radius:12px; font-size:14.5px; font-weight:${active?600:500}; font-family:'Work Sans',sans-serif; background:${active?'var(--accent-soft)':'transparent'}; color:${active?'var(--primary)':'var(--muted)'}; transition:background .15s, color .15s;`,
+      mobileStyle:`flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; border:none; background:none; cursor:pointer; padding:7px 1px; color:${active?'var(--primary)':'var(--muted5b)'}; font-weight:${active?600:500}; font-family:'Work Sans',sans-serif; transition:color .15s;` }; });
 
     const appStyle = `min-height:100vh; background:var(--bg); font-family:'Work Sans',sans-serif; color:var(--text); display:flex; ${mobile?'flex-direction:column;':''}`;
     const sidebarStyle = mobile ? 'display:none;' : 'width:236px; flex:none; background:var(--surface); border-right:1px solid var(--border); padding:22px 16px; display:flex; flex-direction:column; height:100vh; position:sticky; top:0;';
@@ -878,7 +965,7 @@ class Component extends DCLogic {
 
     const meals = (day.meals||[]).map(m=>({...m, edit:()=>this.openModal('meal',m), del:()=>this.delMeal(m.id)}));
     const macCal=(day.meals||[]).reduce((s,m)=>s+(m.calories||0),0), macP=(day.meals||[]).reduce((s,m)=>s+(m.protein||0),0), macC=(day.meals||[]).reduce((s,m)=>s+(m.carbs||0),0), macF=(day.meals||[]).reduce((s,m)=>s+(m.fat||0),0);
-    const calColor = macCal>g.calories ? '#b05a4a' : '#c0613a';
+    const calColor = macCal>g.calories ? '#b05a4a' : 'var(--primary)';
 
     const workouts = (day.workouts||[]).map(w=>({...w, edit:()=>this.openModal('workout',w), del:()=>this.delWorkout(w.id), exercises:(w.exercises||[]).map(e=>({...e, label:`${e.sets}×${e.reps}${e.weight?' · '+e.weight+'kg':''}`}))}));
     const workoutMin=(day.workouts||[]).reduce((s,w)=>s+(w.duration||0),0);
@@ -887,15 +974,16 @@ class Component extends DCLogic {
 
     const circ=2*Math.PI*31;
     const ringDef=[];
-    if(F.food){ ringDef.push({label:'Kalori',val:macCal,goal:g.calories,color:macCal>g.calories?'#b05a4a':'#c0613a',unit:''}); ringDef.push({label:'Protein',val:macP,goal:g.protein,color:'#7c8350',unit:'g'}); }
+    if(F.food){ ringDef.push({label:'Kalori',val:macCal,goal:g.calories,color:macCal>g.calories?'#b05a4a':accent,unit:''}); ringDef.push({label:'Protein',val:macP,goal:g.protein,color:'#7c8350',unit:'g'}); }
     if(F.water) ringDef.push({label:'Su',val:water,goal:g.water,color:'#5d8079',unit:'ml'});
     if(F.sport) ringDef.push({label:'Antrenman',val:workoutMin,goal:g.workoutMin,color:'#cf9a3a',unit:'dk'});
     const rings=ringDef.map(r=>{ const p=Math.round(r.val/r.goal*100); return {...r, pctLabel:p+'%', circ, off:circ*(1-Math.min(1,r.val/r.goal)), valLabel:(r.label==='Su'?(r.val/1000).toFixed(1)+' L':r.val+(r.unit?' '+r.unit:'')), goalLabel:(r.label==='Su'?(r.goal/1000).toFixed(1)+' L':r.goal+(r.unit?' '+r.unit:''))}; });
     const ovArr = ringDef.length ? ringDef.map(r=>Math.min(100,r.val/r.goal*100)) : [];
     const overallPct = ovArr.length ? Math.round(ovArr.reduce((s,x)=>s+x,0)/ovArr.length) : (F.tasks && (day.tasks||[]).length ? Math.round((day.tasks||[]).filter(t=>t.done).length/(day.tasks||[]).length*100) : 0);
 
-    const tasksRaw=(day.tasks||[]).slice().sort((a,b)=>(a.time||'').localeCompare(b.time||''));
-    const mkTask=t=>{ const c=CAT[t.cat]||CAT.personal; return {...t, catLabel:c.label, repeatMark:t.routineId?'· ↻':'', toggle:()=>this.toggleTask(t.id), del:()=>this.delTask(t.id), edit:()=>this.openModal('task',t), check:t.done?'✓':'', checkStyle:`width:22px; height:22px; border-radius:7px; flex:none; cursor:pointer; font-size:13px; display:flex; align-items:center; justify-content:center; border:2px solid ${t.done?'#c0613a':'var(--faint2)'}; background:${t.done?'#c0613a':'#fff'}; color:#fff;`, textStyle:`font-weight:500; font-size:14.5px; color:${t.done?'var(--muted6)':'var(--text2)'}; text-decoration:${t.done?'line-through':'none'};`, catStyle:`width:7px; height:7px; border-radius:50%; background:${c.color}; flex:none;`}; };
+    const carryDay=(data.carryTasks||[]).filter(c=> (!c.done && sel >= (c.createdDate||sel)) || (c.done && c.doneDate===sel)).map(c=>({...c, _carry:true}));
+    const tasksRaw=(day.tasks||[]).concat(carryDay).slice().sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+    const mkTask=t=>{ const c=CAT[t.cat]||CAT.personal; return {...t, catLabel:c.label, repeatMark:t._carry?'· ⏭':(t.routineId?'· ↻':''), toggle:t._carry?(()=>this.toggleCarry(t.id)):(()=>this.toggleTask(t.id)), del:t._carry?(()=>this.delCarry(t.id)):(()=>this.delTask(t.id)), edit:()=>this.openModal('task',t), check:t.done?'✓':'', checkStyle:`width:22px; height:22px; border-radius:7px; flex:none; cursor:pointer; font-size:13px; display:flex; align-items:center; justify-content:center; border:2px solid ${t.done?'var(--primary)':'var(--faint2)'}; background:${t.done?'var(--primary)':'#fff'}; color:#fff;`, textStyle:`font-weight:500; font-size:14.5px; color:${t.done?'var(--muted6)':'var(--text2)'}; text-decoration:${t.done?'line-through':'none'};`, catStyle:`width:7px; height:7px; border-radius:50%; background:${c.color}; flex:none;`}; };
     const tasks=tasksRaw.map(mkTask);
     const tasksFiltered=(S.hideDone?tasksRaw.filter(t=>!t.done):tasksRaw).map(mkTask);
     const doneCount=tasksRaw.filter(t=>t.done).length;
@@ -921,8 +1009,8 @@ class Component extends DCLogic {
     const calMax=Math.max(g.calories,...last7.map(d=>d.cal),1);
     const watMax=Math.max(g.water,...last7.map(d=>d.water),1);
     const woMax=Math.max(g.workoutMin,...last7.map(d=>d.wmin),1);
-    const tStyle=isT=>isT?'color:#c0613a; font-weight:700;':'';
-    const calBars=last7.map(d=>({label:d.label, valLabel:d.cal||'', h:barH(d.cal,calMax), color:d.cal>g.calories?'#b05a4a':'#c0613a', todayStyle:tStyle(d.isToday)}));
+    const tStyle=isT=>isT?'color:var(--primary); font-weight:700;':'';
+    const calBars=last7.map(d=>({label:d.label, valLabel:d.cal||'', h:barH(d.cal,calMax), color:d.cal>g.calories?'#b05a4a':'var(--primary)', todayStyle:tStyle(d.isToday)}));
     const watBars=last7.map(d=>({label:d.label, valLabel:d.water?(d.water/1000).toFixed(1):'', h:barH(d.water,watMax), color:'#5d8079', todayStyle:tStyle(d.isToday)}));
     const woBars=last7.map(d=>({label:d.label, valLabel:d.wmin||'', h:barH(d.wmin,woMax), color:'#cf9a3a', todayStyle:tStyle(d.isToday)}));
     const tkBars=last7.map(d=>{ const pct=d.ttot?Math.round(d.tdone/d.ttot*100):0; return {label:d.label, valLabel:d.ttot?pct+'%':'', h:Math.max(4,Math.round(pct/100*110)), color:'#7c8350', todayStyle:tStyle(d.isToday)}; });
@@ -937,20 +1025,30 @@ class Component extends DCLogic {
 
     const routines=(data.routines||[]).map(r=>({text:r.text, del:()=>this.delRoutine(r.id)}));
 
-    const b={}; ['taskText','taskTime','taskCat','planTitle','planStart','planCat','mealName','mealMeal','mealGrams','mealCalories','mealProtein','mealCarbs','mealFat','woName','woType','woDuration','wWeight','wDate','wWaist','wFat','gCal','gProtein','gWater','gWorkout','pHeight','pWeight','pAge','pSex','pActivity','pGoal','syncBin','syncKey'].forEach(f=> b[f]=e=>this.updateField(f,e.target.value));
-    b.taskRepeat=e=>this.updateField('taskRepeat', e.target.checked);
+    const fmtTl=v=>(Number(v)||0).toLocaleString('tr-TR')+' ₺';
+    const wishSorted=(data.wishlist||[]).slice().sort((a,b)=>(a.bought?1:0)-(b.bought?1:0));
+    const wishlist=wishSorted.map(w=>({ name:w.name, note:w.note||'', url:w.url||'', hasUrl:!!w.url, priceLabel:fmtTl(w.price), bought:w.bought, toggle:()=>this.toggleWish(w.id), del:()=>this.delWish(w.id), edit:()=>this.openModal('wish',w),
+      checkStyle:`width:22px; height:22px; border-radius:7px; flex:none; cursor:pointer; font-size:13px; display:flex; align-items:center; justify-content:center; border:2px solid ${w.bought?'var(--primary)':'var(--faint2)'}; background:${w.bought?'var(--primary)':'#fff'}; color:#fff;`,
+      check:w.bought?'✓':'',
+      nameStyle:`font-weight:500; font-size:15px; color:${w.bought?'var(--muted6)':'var(--text2)'}; text-decoration:${w.bought?'line-through':'none'};`,
+      priceStyle:`font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:16px; color:${w.bought?'var(--muted4)':'var(--primary)'};` }));
+    const wishCount=(data.wishlist||[]).filter(w=>!w.bought).length;
+    const wishTotalLabel=fmtTl((data.wishlist||[]).filter(w=>!w.bought).reduce((s,w)=>s+(Number(w.price)||0),0));
+
+    const b={}; ['taskText','taskTime','taskCat','taskType','planTitle','planStart','planCat','mealName','mealMeal','mealGrams','mealCalories','mealProtein','mealCarbs','mealFat','woName','woType','woDuration','wWeight','wDate','wWaist','wFat','gCal','gProtein','gWater','gWorkout','pHeight','pWeight','pAge','pSex','pActivity','pGoal','syncBin','syncKey','wishName','wishPrice','wishNote','wishUrl'].forEach(f=> b[f]=e=>this.updateField(f,e.target.value));
 
     const exRows=(S.form.exercises||[]).map((ex,i)=>({ name:ex.name, sets:ex.sets, reps:ex.reps, weight:ex.weight, onName:e=>this.updateExercise(i,'name',e.target.value), onSets:e=>this.updateExercise(i,'sets',e.target.value), onReps:e=>this.updateExercise(i,'reps',e.target.value), onWeight:e=>this.updateExercise(i,'weight',e.target.value), onRemove:()=>this.removeExercise(i) }));
 
-    const featDefs=[['tasks','Görevler','Yapılacaklar listesi'],['plan','Günlük plan','Zaman çizelgesi blokları'],['food','Beslenme & makro','Öğün ve kalori takibi'],['water','Su takibi','Günlük su hedefi'],['sport','Spor & antrenman','Egzersiz ve setler'],['weight','Kilo & ölçü','Tartı ve ölçüm geçmişi'],['trend','Trend / haftalık özet','Son 7 gün grafikleri']];
-    const features=featDefs.map(([k,label,desc])=>{ const on=!!F[k]; return {key:k,label,desc,toggle:()=>this.toggleFeature(k), switchStyle:`width:46px; height:27px; border-radius:14px; border:none; cursor:pointer; flex:none; padding:3px; display:flex; align-items:center; justify-content:${on?'flex-end':'flex-start'}; background:${on?'#c0613a':'var(--switch-off)'}; transition:background .2s;`, knobStyle:'width:21px; height:21px; border-radius:50%; background:var(--knob); display:block; box-shadow:0 1px 2px rgba(0,0,0,.2);'}; });
-    const modalTitles={task:'Görev', plan:'Plan bloğu', meal:'Öğün', workout:'Antrenman', weight:'Ölçüm', profile:'Profil & hedefler', settings:'Modüller'};
+    const featDefs=[['tasks','Görevler','Yapılacaklar listesi'],['plan','Günlük plan','Zaman çizelgesi blokları'],['food','Beslenme & makro','Öğün ve kalori takibi'],['water','Su takibi','Günlük su hedefi'],['sport','Spor & antrenman','Egzersiz ve setler'],['weight','Kilo & ölçü','Tartı ve ölçüm geçmişi'],['trend','Trend / haftalık özet','Son 7 gün grafikleri'],['wishlist','Almak istediklerim','Fiyatıyla alışveriş listesi']];
+    const features=featDefs.map(([k,label,desc])=>{ const on=!!F[k]; return {key:k,label,desc,toggle:()=>this.toggleFeature(k), switchStyle:`width:46px; height:27px; border-radius:14px; border:none; cursor:pointer; flex:none; padding:3px; display:flex; align-items:center; justify-content:${on?'flex-end':'flex-start'}; background:${on?'var(--primary)':'var(--switch-off)'}; transition:background .2s;`, knobStyle:'width:21px; height:21px; border-radius:50%; background:var(--knob); display:block; box-shadow:0 1px 2px rgba(0,0,0,.2);'}; });
+    const modalTitles={task:'Görev', plan:'Plan bloğu', meal:'Öğün', workout:'Antrenman', weight:'Ölçüm', profile:'Profil & hedefler', settings:'Modüller', wish:'Ürün'};
     const modalTitle=S.modal==='settings'?modalTitles.settings:((S.editId&&S.modal!=='profile'? (modalTitles[S.modal]+' düzenle') : (S.modal==='profile'?modalTitles.profile:(modalTitles[S.modal]+' ekle')))||'');
     const modalCardStyle=`background:var(--surface); width:100%; max-width:${(S.modal==='workout'||S.modal==='profile')?'560px':'460px'}; border-radius:24px 24px ${mobile?'0 0':'24px 24px'}; padding:24px; max-height:90vh; overflow-y:auto; animation:ktslide .28s cubic-bezier(.2,.8,.2,1); ${mobile?'':'margin:auto;'}`;
 
     return {
       navItems, appStyle, sidebarStyle, contentStyle, bottomNavStyle,
-      isDashboard:view==='dashboard', isTrend:view==='trend', isPlan:view==='plan', isTasks:view==='tasks', isSport:view==='sport', isFood:view==='food', isWeight:view==='weight',
+      isDashboard:view==='dashboard', isTrend:view==='trend', isPlan:view==='plan', isTasks:view==='tasks', isSport:view==='sport', isFood:view==='food', isWeight:view==='weight', isWishlist:view==='wishlist',
+      wishlist, noWish:wishlist.length===0, wishCount, wishTotalLabel, openWish:()=>this.openModal('wish'),
       showDateNav, dateNavLabel, notToday:sel!==td, prevDay:()=>this.changeDate(-1), nextDay:()=>this.changeDate(1), goToday:()=>this.goToday(),
       greeting:dashTitle, streak, overallPct,
       showRings:rings.length>0, showTasks:!!F.tasks, showPlan:!!F.plan, showFood:!!F.food, showWater:!!F.water, showWeight:!!F.weight,
@@ -960,7 +1058,7 @@ class Component extends DCLogic {
       rings,
       tasks, tasksFiltered, taskPct, taskDoneLabel:doneCount+'/'+tasksRaw.length, noTasks:tasks.length===0, noTasksFiltered:tasksFiltered.length===0,
       hideDone:S.hideDone, hideLabel:S.hideDone?'Tümünü göster':'Tamamlananları gizle', toggleHide:()=>this.setState(s=>({hideDone:!s.hideDone})),
-      hideBtnStyle:`border:1px solid var(--border); background:${S.hideDone?'var(--accent-soft)':'var(--card)'}; color:${S.hideDone?'#c0613a':'var(--muted2)'}; padding:10px 14px; border-radius:11px; font-weight:600; cursor:pointer; font-size:13px;`,
+      hideBtnStyle:`border:1px solid var(--border); background:${S.hideDone?'var(--accent-soft)':'var(--card)'}; color:${S.hideDone?'var(--primary)':'var(--muted2)'}; padding:10px 14px; border-radius:11px; font-weight:600; cursor:pointer; font-size:13px;`,
       routines, hasRoutines:routines.length>0,
       plan, noPlan:plan.length===0,
       meals, noMeals:meals.length===0, macP, macC, macF, macCal, goalCal:g.calories, macroBars, calColor,
@@ -970,14 +1068,14 @@ class Component extends DCLogic {
       trendCards,
       openTask:()=>this.openModal('task'), openPlan:()=>this.openModal('plan'), openMeal:()=>this.openModal('meal'), openWorkout:()=>this.openModal('workout'), openWeight:()=>this.openModal('weight'), openProfile:()=>this.openModal('profile'),
       modalOpen:!!S.modal, modalTitle, modalCardStyle, saveLabel:S.editId&&S.modal!=='profile'?'Güncelle':'Kaydet',
-      isTaskModal:S.modal==='task', isPlanModal:S.modal==='plan', isMealModal:S.modal==='meal', isWorkoutModal:S.modal==='workout', isWeightModal:S.modal==='weight', isProfileModal:S.modal==='profile',
+      isTaskModal:S.modal==='task', isPlanModal:S.modal==='plan', isMealModal:S.modal==='meal', isWorkoutModal:S.modal==='workout', isWeightModal:S.modal==='weight', isProfileModal:S.modal==='profile', isWishModal:S.modal==='wish', isNewTask:S.modal==='task'&&!S.editId,
       showMealPresets:S.modal==='meal'&&!S.editId&&mealPresets.length>0, mealPresets, showWoPresets:S.modal==='workout'&&!S.editId&&woPresets.length>0, woPresets,
       closeModal:()=>this.closeModal(), submit:()=>this.submit(), stop:(e)=>e.stopPropagation(), addExercise:()=>this.addExercise(), exRows, form:S.form, b,
       calcGoals:()=>this.calcGoals(), exportData:()=>this.exportData(), importData:(e)=>this.importData(e),
       syncConnected:!!(S.sync&&S.sync.binId), connectSync:()=>this.connectSync(), disconnectSync:()=>this.disconnectSync(),
       syncStatusLabel:({off:'kapalı', idle:'bağlı', pulling:'indiriliyor…', pushing:'yükleniyor…', synced:'senkron ✓', error:'hata — kontrol et'})[S.syncStatus]||'kapalı',
-      toggleTheme:()=>this.toggleTheme(),
-      themeSwitchStyle:`width:46px; height:27px; border-radius:14px; border:none; cursor:pointer; flex:none; padding:3px; display:flex; align-items:center; justify-content:${S.theme==='dark'?'flex-end':'flex-start'}; background:${S.theme==='dark'?'#c0613a':'var(--switch-off)'}; transition:background .2s;`,
+      toggleTheme:()=>this.toggleTheme(), accentValue:accent, setAccent:(e)=>this.setAccent(e.target.value),
+      themeSwitchStyle:`width:46px; height:27px; border-radius:14px; border:none; cursor:pointer; flex:none; padding:3px; display:flex; align-items:center; justify-content:${S.theme==='dark'?'flex-end':'flex-start'}; background:${S.theme==='dark'?'var(--primary)':'var(--switch-off)'}; transition:background .2s;`,
       themeKnobStyle:'width:21px; height:21px; border-radius:50%; background:var(--knob); display:block; box-shadow:0 1px 2px rgba(0,0,0,.2);',
       syncShow:!!(S.sync&&S.sync.binId), syncNow:()=>this.cloudPull(),
       syncShortLabel:({pulling:'İndiriliyor', pushing:'Yükleniyor', synced:'Senkron', error:'Hata', idle:'Senkron'})[S.syncStatus]||'Senkron',
